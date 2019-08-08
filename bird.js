@@ -48,7 +48,7 @@ var bird = function(game) {
         }
         //check game over
         let c1 = (this.x + 35 >= this.game.pipe.x && this.x <= this.game.pipe.x + 50);
-        let c2 = (this.y + 26 < this.game.pipe.y && this.y > this.game.pipe.y - 150);
+        let c2 = (this.y + 26 < this.game.pipe.y && this.y > this.game.pipe.y - this.game.pipe.distance);
         if((c1&&!c2)) {
         	console.log(this.x, this.y, this.game.pipe.x, this.game.pipe.y, c1, c2);
         	obj2.play();

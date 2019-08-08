@@ -3,6 +3,8 @@ var pipe = function(game) {
 	this.images = [];
 	this.loaded1 = false;
 	this.loaded2 = false;
+
+	this.distance = 120;
 	this.x = 200;
 	this.y = 287;
 
@@ -38,7 +40,7 @@ var pipe = function(game) {
 		if(this.x == -50) {
 			this.x += 200;
 			this.y = this.nextY;
-			this.nextY = Math.floor(150 + Math.random() * 230);
+			this.nextY = Math.floor(this.distance + Math.random() * (360 - this.distance));
 
 		}
 	}
@@ -48,10 +50,10 @@ var pipe = function(game) {
 			return;
 		}
 		// console.log("drawing bg");
-		self.game.context.drawImage(this.images[1], this.x, this.y - 437);
+		self.game.context.drawImage(this.images[1], this.x, this.y - 287 - this.distance);
 		self.game.context.drawImage(this.images[0], this.x, this.y);
 
-		self.game.context.drawImage(this.images[1], this.x + 200, this.nextY - 437);
+		self.game.context.drawImage(this.images[1], this.x + 200, this.nextY - 287 - this.distance);
 		self.game.context.drawImage(this.images[0], this.x + 200, this.nextY);
 
 		// self.game.context.drawImage(this.images[1], this.x + 288, this.y - 420);
