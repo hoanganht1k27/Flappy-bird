@@ -41,7 +41,7 @@ var game = function() {
 	}
 
 	this.listenMouse = function() {
-		this.canvas.addEventListener('click', function() {
+		this.canvas.addEventListener('touchstart', function() {
 			self.bird.flap();
 		});
 	}
